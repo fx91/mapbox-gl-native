@@ -28,9 +28,8 @@ class Context : private util::noncopyable {
 public:
     ~Context();
 
-    UniqueProgram createProgram();
-    UniqueShader createVertexShader();
-    UniqueShader createFragmentShader();
+    UniqueShader createShader(ShaderType type, const char * source);
+    UniqueProgram createProgram(ShaderID vertexShader, ShaderID fragmentShader);
     UniqueTexture createTexture();
 
     template <class V>
