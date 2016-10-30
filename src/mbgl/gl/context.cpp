@@ -34,11 +34,12 @@ Context::~Context() {
     reset();
 }
 
-UniqueShader Context::createShader(ShaderType type, const char * source) {
+UniqueShader Context::createShader(ShaderType type, const std::string& source) {
     UniqueShader result { MBGL_CHECK_ERROR(glCreateShader(static_cast<GLenum>(type))), { this } };
 
-    const GLsizei lengths = static_cast<GLsizei>(std::strlen(source));
-    MBGL_CHECK_ERROR(glShaderSource(result, 1, &source, &lengths));
+    const GLchar* sources = source.data();
+    const GLsizei lengths = static_cast<GLsizei>(source.length());
+    MBGL_CHECK_ERROR(glShaderSource(result, 1, &sources, &lengths));
     MBGL_CHECK_ERROR(glCompileShader(result));
 
     GLint status = 0;

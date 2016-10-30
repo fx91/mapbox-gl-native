@@ -157,6 +157,7 @@ set(MBGL_CORE_FILES
     src/mbgl/programs/fill_program.hpp
     src/mbgl/programs/line_program.cpp
     src/mbgl/programs/line_program.hpp
+    src/mbgl/programs/program.hpp
     src/mbgl/programs/programs.hpp
     src/mbgl/programs/raster_program.cpp
     src/mbgl/programs/raster_program.hpp

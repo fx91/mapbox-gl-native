@@ -1,6 +1,6 @@
 #pragma once
 
-#include <mbgl/gl/program.hpp>
+#include <mbgl/programs/program.hpp>
 #include <mbgl/programs/attributes.hpp>
 #include <mbgl/programs/uniforms.hpp>
 #include <mbgl/shader/circle.hpp>
@@ -14,7 +14,7 @@ MBGL_DEFINE_UNIFORM_SCALAR(bool, u_scale_with_map);
 MBGL_DEFINE_UNIFORM_SCALAR(float, u_devicepixelratio);
 } // namespace uniforms
 
-class CircleProgram : public gl::Program<
+class CircleProgram : public Program<
     shaders::circle,
     gl::Attributes<
         attributes::a_pos>,

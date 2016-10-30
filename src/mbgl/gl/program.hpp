@@ -4,10 +4,12 @@
 #include <mbgl/gl/object.hpp>
 #include <mbgl/gl/context.hpp>
 
+#include <string>
+
 namespace mbgl {
 namespace gl {
 
-template <class Shaders, class As, class Us>
+template <class As, class Us>
 class Program {
 public:
     using Attributes = As;
@@ -16,9 +18,9 @@ public:
     using Uniforms = Us;
     using UniformValues = typename Uniforms::Values;
 
-    Program(Context& context)
-        : vertexShader(context.createShader(ShaderType::Vertex, Shaders::vertexSource)),
-          fragmentShader(context.createShader(ShaderType::Fragment, Shaders::fragmentSource)),
+    Program(Context& context, const std::string& vertexSource, const std::string& fragmentSource)
+        : vertexShader(context.createShader(ShaderType::Vertex, vertexSource)),
+          fragmentShader(context.createShader(ShaderType::Fragment, fragmentSource)),
           program(context.createProgram(vertexShader, fragmentShader)),
           attributesState(Attributes::state(program)),
           uniformsState(Uniforms::state(program)) {}

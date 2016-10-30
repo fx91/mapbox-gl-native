@@ -1,6 +1,6 @@
 #pragma once
 
-#include <mbgl/gl/program.hpp>
+#include <mbgl/programs/program.hpp>
 #include <mbgl/programs/attributes.hpp>
 #include <mbgl/programs/uniforms.hpp>
 #include <mbgl/shader/fill.hpp>
@@ -84,7 +84,7 @@ struct FillPatternUniforms : gl::Uniforms<
                          const TransformState&);
 };
 
-class FillProgram : public gl::Program<
+class FillProgram : public Program<
     shaders::fill,
     FillAttributes,
     FillUniforms>
@@ -92,7 +92,7 @@ class FillProgram : public gl::Program<
     using Program::Program;
 };
 
-class FillPatternProgram : public gl::Program<
+class FillPatternProgram : public Program<
     shaders::fill_pattern,
     FillAttributes,
     FillPatternUniforms>
@@ -100,7 +100,7 @@ class FillPatternProgram : public gl::Program<
     using Program::Program;
 };
 
-class FillOutlineProgram : public gl::Program<
+class FillOutlineProgram : public Program<
     shaders::fill_outline,
     FillAttributes,
     FillUniforms>
@@ -108,7 +108,7 @@ class FillOutlineProgram : public gl::Program<
     using Program::Program;
 };
 
-class FillOutlinePatternProgram : public gl::Program<
+class FillOutlinePatternProgram : public Program<
     shaders::fill_outline_pattern,
     FillAttributes,
     FillPatternUniforms>

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <mbgl/gl/program.hpp>
+#include <mbgl/programs/program.hpp>
 #include <mbgl/programs/attributes.hpp>
 #include <mbgl/programs/uniforms.hpp>
 #include <mbgl/shader/symbol_icon.hpp>
@@ -69,7 +69,7 @@ struct SymbolAttributes : gl::Attributes<
 
 using SymbolVertex = SymbolAttributes::Vertex;
 
-class SymbolIconProgram : public gl::Program<
+class SymbolIconProgram : public Program<
     shaders::symbol_icon,
     SymbolAttributes,
     gl::Uniforms<
@@ -92,7 +92,7 @@ public:
                                        const TransformState&);
 };
 
-class SymbolSDFProgram : public gl::Program<
+class SymbolSDFProgram : public Program<
     shaders::symbol_sdf,
     SymbolAttributes,
     gl::Uniforms<

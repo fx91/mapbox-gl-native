@@ -14,6 +14,7 @@
 #include <memory>
 #include <vector>
 #include <array>
+#include <string>
 #include <unordered_map>
 
 namespace mbgl {
@@ -28,7 +29,7 @@ class Context : private util::noncopyable {
 public:
     ~Context();
 
-    UniqueShader createShader(ShaderType type, const char * source);
+    UniqueShader createShader(ShaderType type, const std::string& source);
     UniqueProgram createProgram(ShaderID vertexShader, ShaderID fragmentShader);
     UniqueTexture createTexture();
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <mbgl/gl/program.hpp>
+#include <mbgl/programs/program.hpp>
 #include <mbgl/programs/attributes.hpp>
 #include <mbgl/programs/uniforms.hpp>
 #include <mbgl/shader/raster.hpp>
@@ -23,7 +23,7 @@ MBGL_DEFINE_UNIFORM_VECTOR(float, 3, u_spin_weights);
 MBGL_DEFINE_UNIFORM_VECTOR(float, 2, u_tl_parent);
 } // namespace uniforms
 
-class RasterProgram : public gl::Program<
+class RasterProgram : public Program<
     shaders::raster,
     gl::Attributes<
         attributes::a_pos,

@@ -72,7 +72,7 @@ Painter::Painter(gl::Context& context_, const TransformState& state_)
 
     programs = std::make_unique<Programs>(context);
 #ifndef NDEBUG
-    overdrawPrograms = std::make_unique<Programs>(context, Programs::Defines::Overdraw);
+    overdrawPrograms = std::make_unique<Programs>(context, ProgramDefines::Overdraw);
 #endif
 }
 

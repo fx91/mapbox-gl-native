@@ -1,6 +1,6 @@
 #pragma once
 
-#include <mbgl/gl/program.hpp>
+#include <mbgl/programs/program.hpp>
 #include <mbgl/programs/attributes.hpp>
 #include <mbgl/programs/uniforms.hpp>
 #include <mbgl/shader/collision_box.hpp>
@@ -15,7 +15,7 @@ MBGL_DEFINE_UNIFORM_SCALAR(float, u_scale);
 MBGL_DEFINE_UNIFORM_SCALAR(float, u_maxzoom);
 } // namespace uniforms
 
-class CollisionBoxProgram : public gl::Program<
+class CollisionBoxProgram : public Program<
     shaders::collision_box,
     gl::Attributes<
         attributes::a_pos,

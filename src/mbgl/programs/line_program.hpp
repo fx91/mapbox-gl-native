@@ -1,6 +1,6 @@
 #pragma once
 
-#include <mbgl/gl/program.hpp>
+#include <mbgl/programs/program.hpp>
 #include <mbgl/programs/attributes.hpp>
 #include <mbgl/programs/uniforms.hpp>
 #include <mbgl/shader/line.hpp>
@@ -86,7 +86,7 @@ struct LineAttributes : gl::Attributes<
 
 using LineVertex = LineAttributes::Vertex;
 
-class LineProgram : public gl::Program<
+class LineProgram : public Program<
     shaders::line,
     LineAttributes,
     gl::Uniforms<
@@ -111,7 +111,7 @@ public:
                                        const TransformState&);
 };
 
-class LinePatternProgram : public gl::Program<
+class LinePatternProgram : public Program<
     shaders::line_pattern,
     LineAttributes,
     gl::Uniforms<
@@ -145,7 +145,7 @@ public:
                                        const SpriteAtlasPosition& posB);
 };
 
-class LineSDFProgram : public gl::Program<
+class LineSDFProgram : public Program<
     shaders::line_sdf,
     LineAttributes,
     gl::Uniforms<
